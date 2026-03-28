@@ -61,14 +61,7 @@
     </div><!-- end loader -->
     <!-- END LOADER -->
 
-    <!--custom gpt-->
-    <script>
-        window.GPTTConfig = {
-            uuid: "659fe2a8f390477d975912d597558466"
-        }
-    </script>
-    <script src="https://app.gpt-trainer.com/widget-asset.min.js" defer>
-    </script>
+
 
 
     <!-- Navigation -->
@@ -1866,6 +1859,31 @@
                     }
                 }
             </script>
+
+            <!-- Chatbot Widget -->
+            <style>
+                #chatbot-toggle {
+                    position: fixed; bottom: 24px; right: 24px;
+                    width: 56px; height: 56px; border-radius: 50%;
+                    background-color: #333; color: #fff; font-size: 26px;
+                    border: none; cursor: pointer; z-index: 9999;
+                    display: flex; align-items: center; justify-content: center;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                }
+                #chatbot-box {
+                    display: none; position: fixed;
+                    bottom: 90px; right: 24px;
+                    width: 370px; height: 520px;
+                    z-index: 9999; border-radius: 12px;
+                    overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+                }
+            </style>
+            <button id="chatbot-toggle" onclick="var b=document.getElementById('chatbot-box');b.style.display=b.style.display==='block'?'none':'block'">&#128172;</button>
+            <div id="chatbot-box">
+                <iframe src="https://app.gpt-trainer.com/widget/659fe2a8f390477d975912d597558466"
+                    width="100%" height="100%" frameborder="0"
+                    allow="clipboard-read; clipboard-write"></iframe>
+            </div>
 
             <!-- ALL JS FILES -->
             <script src="js/all.js"></script>
