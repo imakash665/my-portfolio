@@ -1,25 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const sendMessageButton = document.getElementById("sendMessageButton");
+  const form = document.getElementById("contactForm");
 
-  sendMessageButton.addEventListener("click", function () {
-    const form = document.getElementById("contactForm");
-    const formData = new FormData(form);
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const subject = formData.get("subject");
-    const message = formData.get("message");
+    const btn = document.getElementById("sendMessageButton");
+    btn.disabled = true;
+    btn.textContent = "Sending...";
 
-    // Add the name at the end of the main message
-    const fullMessage = `${message}\n\n- ${name}\n\n- ${email}`;
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    });
 
-    const mailtoLink = `mailto:imakash665@gmail.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(fullMessage)}`;
-    
-    window.location.href = mailtoLink;
+    if (response.ok) {
+      alert("Message sent successfully!");
+      form.reset();
+    } else {
+      alert("Failed to send message. Please try again.");
+    }
+
+    btn.disabled = false;
+    btn.textContent = "Send Message";
   });
 });
-
-
-
