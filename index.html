@@ -820,6 +820,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
     <!-- PROJECTS -->
 
@@ -937,25 +939,21 @@
         </style>
 
         <!-- Gallery grid -->
+        <div class="container">
         <div class="gallery-list row">
-            <!-- Project items with specific classes -->
 
             <div class="col-md-4 col-sm-6 gallery-grid">
                 <div class="gallery-single fix python machine-learning technology">
-                    <!-- Project content -->
-                    <img src="uploads/project_images/electricty_demand.jpeg" class="img-fluid" alt="Movie Recommender">
+                    <img src="uploads/project_images/electricty_demand.jpeg" alt="Movie Recommender">
                     <div class="img-overlay">
-                        <a href="https://github.com/imakash665/Movie-Recommender-System" target="_blank" class="square-link"
-                            style="display: inline-flex; justify-content: center; align-items: center; width: 100px; height: 100px;">
-                            <span class="show-text"
-                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 16px; font-weight: bold; color: rgb(252, 247, 247);">Movie
-                                Recommender<br>System<br>Python | ML</span>
+                        <a href="https://github.com/imakash665/Movie-Recommender-System" target="_blank">
+                            <span class="proj-label">Movie Recommender System<br><small>Python | ML</small></span>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Add more project items as needed with appropriate classes -->
+        </div>
         </div>
     </div>
     </div>
@@ -1003,44 +1001,50 @@
 
     <style>
         .gallery-single.fix {
-            margin-bottom: auto;
-            /* Adjust the spacing between projects */
-            width: calc(25% - 30px);
-            /* Adjust the width of each project */
-            height: 200px;
-            /* Set a fixed height for each project */
+            height: 220px;
             overflow: hidden;
-            /* Hide any overflow content */
             position: relative;
-            /* Positioning for overlay */
-        }
-
-
-        @media (max-width: 992px) {
-            .gallery-single.fix {
-                width: calc(50% - 30px);
-                /* Adjust the width for medium devices */
-            }
-        }
-
-        @media (max-width: 576px) {
-            .gallery-single.fix {
-                width: calc(100% - 30px);
-                /* Adjust the width for small devices */
-            }
+            margin-bottom: 30px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .gallery-single.fix img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-single.fix .img-overlay {
             position: absolute;
-            /* Positioning for image */
-            top: 50%;
-            /* Center the image vertically */
-            left: 50%;
-            /* Center the image horizontally */
-            transform: translate(-50%, -50%);
-            /* Center the image */
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(33,33,33,0.82);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-single.fix:hover .img-overlay {
+            opacity: 1;
+        }
+
+        .proj-label {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .proj-label small {
+            display: block;
+            font-weight: 400;
+            font-size: 13px;
+            color: #f9c700;
+            margin-top: 4px;
         }
 
 
@@ -1362,7 +1366,6 @@
                 </div>
             </div>
         </div>
-    </div>
     <!-- END OF PROJECTS -->
     <div id="services" class="section lb">
         <div class="container">
