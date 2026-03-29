@@ -67,7 +67,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <img class="img-fluid" src="images/AK..png" alt="" />
+                <img class="img-fluid" src="images/AK..png" alt="Akash Kumar" />
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
@@ -1059,7 +1059,6 @@
         </div>
         </div>
     </div>
-    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -1702,7 +1701,6 @@
             </div>
         </div>
     </div>
-    </div>
 
     <style>
         #blog .section-title h3 {
@@ -1719,54 +1717,70 @@
     </style>
 
 
-    <div id="blog" class="section lb">
+    <div id="blog" class="section wb">
         <div class="container">
-            <div class="section-title text-left">
-                <h3>
-                    <span>Blog</span> <!-- Wrap "Blog" text in a span for styling -->
-                    <!-- Add the Medium blog icon -->
-                    <a href="https://github.com/imakash665" target="_blank">
-                        <i class="fab fa-medium fa-1x"></i> <!-- Adjust icon size with fa-lg -->
-                    </a>
-                </h3>
-                <p>Here are some blogs on Python, Machine Learning, and Web Development.</p>
-            </div><!-- end title -->
-            <!-- Add the Medium blog icon -->
-
-            <div class="row">
-                <div class="col-md-4 col-sm-6 col-lg-4">
-                    <div class="post-box">
-                        <div class="post-thumb">
-                            <img src="uploads/blogs/mlops.jpg" class="img-fluid" alt="post-img" />
-                            <div class="date">
-                                <span>24</span>
-                                <span>Jan</span>
-                            </div>
+            <div class="section-title text-center">
+                <h3>Blog</h3>
+                <div style="width:50px;height:3px;background:#f9c700;margin:10px auto 10px;"></div>
+                <p>Thoughts on Python, Machine Learning, and Data Engineering.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-sm-6">
+                    <div class="blog-card">
+                        <div class="blog-thumb">
+                            <img src="uploads/blogs/mlops.jpg" class="img-fluid" alt="MLOps Blog">
+                            <span class="blog-tag">MLOps</span>
                         </div>
-                        <div class="post-info">
+                        <div class="blog-body">
+                            <span class="blog-date"><i class="fas fa-calendar-alt"></i> Jan 2025</span>
                             <h4>Are We Even Doing MLOps Right?</h4>
-                            <ul>
-                                <li>Oct 2025</li>
-                                <li><a href="https://medium.com/@imakash665/are-we-even-doing-mlops-right-heres-what-most-teams-actually-do-d367926bbf4e"><b>Read More</b></a></li>
-                            </ul>
-                            <p>MLOps is evolving fast, but real-world adoption often lags behind the tools and theory. I dug into a survey conducted by DataTalks.Club and analyzed real responses across key areas of ML operations.</p>
+                            <p>MLOps is evolving fast, but real-world adoption often lags behind the tools and theory. I analyzed real responses across key ML operations areas.</p>
+                            <a href="https://medium.com/@imakash665/are-we-even-doing-mlops-right-heres-what-most-teams-actually-do-d367926bbf4e" target="_blank" class="blog-read-more">Read on Medium <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                
             </div>
-
         </div>
     </div>
+    <style>
+        .blog-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+        }
+        .blog-card:hover { transform: translateY(-6px); box-shadow: 0 10px 28px rgba(0,0,0,0.14); }
+        .blog-thumb { position: relative; overflow: hidden; height: 200px; }
+        .blog-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+        .blog-card:hover .blog-thumb img { transform: scale(1.05); }
+        .blog-tag {
+            position: absolute; top: 14px; left: 14px;
+            background: #f9c700; color: #111;
+            padding: 4px 12px; border-radius: 20px;
+            font-size: 12px; font-weight: 700;
+        }
+        .blog-body { padding: 20px; }
+        .blog-date { font-size: 12px; color: #999; display: block; margin-bottom: 8px; }
+        .blog-date i { margin-right: 5px; color: #f9c700; }
+        .blog-body h4 { font-size: 17px; font-weight: 700; color: #222; margin-bottom: 10px; }
+        .blog-body p { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 14px; }
+        .blog-read-more {
+            font-size: 13px; font-weight: 700; color: #333;
+            border-bottom: 2px solid #f9c700; padding-bottom: 2px;
+            transition: color 0.3s;
+        }
+        .blog-read-more:hover { color: #f9c700; }
+        .blog-read-more i { margin-left: 5px; }
+    </style>
 
     <div id="contact" class="section db">
         <div class="container">
-            <div id="contact" class="section db">
-                <div class="container">
-                    <div class="section-title text-left">
-                        <h3>Contact</h3>
-                        <p>You can contact me for any services I am providing and also regarding job recruitment.</p>
-                    </div><!-- end title -->
+            <div class="section-title text-left">
+                <h3>Contact</h3>
+                <p>You can contact me for any services I am providing and also regarding job recruitment.</p>
+            </div>
 
                     <div class="row">
                         <div class="col-md-12">
@@ -1804,29 +1818,60 @@
                             </div>
                         </div><!-- end col -->
                     </div><!-- end row -->
-                </div><!-- end container -->
-            </div><!-- end section -->
+        </div><!-- end container -->
 
             <script src="js/contact_me.js"></script>
 
 
             <div class="copyrights">
                 <div class="container">
-                    <div class="footer-distributed">
-                        <div class="footer-left">
-                            <p class="footer-links">
-                                <a href="#home">Home</a>
-                                <a href="#blog">Blog</a>
-                                <a href="#about">About</a>
-                                <a href="#contact">Contact</a>
-                            </p>
-                            <p class="footer-company-name">All Rights Reserved. &copy; 2023 <a href="#">AK.</a> Design
-                                By :
-                                Akash Kumar
+                    <div class="footer-top">
+                        <div class="footer-brand">
+                            <h4 style="color:#f9c700;font-weight:700;margin:0 0 6px;">Akash Kumar</h4>
+                            <p style="color:#aaa;font-size:13px;margin:0;">Software Engineer (Data/ML) &middot; New Delhi, India</p>
+                        </div>
+                        <div class="footer-nav">
+                            <a href="#home">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#projects">Projects</a>
+                            <a href="#blog">Blog</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                        <div class="footer-social">
+                            <a href="https://www.linkedin.com/in/imakash665/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/imakash665" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://medium.com/@imakash665" target="_blank"><i class="fab fa-medium"></i></a>
+                            <a href="mailto:imakash665@gmail.com"><i class="far fa-envelope"></i></a>
                         </div>
                     </div>
-                </div><!-- end container -->
-            </div><!-- end copyrights -->
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Akash Kumar. All Rights Reserved. Built with ❤️ by Akash Kumar</p>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .copyrights { background: #111; padding: 40px 0 0; }
+                .footer-top {
+                    display: flex; justify-content: space-between;
+                    align-items: center; flex-wrap: wrap;
+                    gap: 20px; padding-bottom: 30px;
+                    border-bottom: 1px solid rgba(255,255,255,0.08);
+                }
+                .footer-nav { display: flex; gap: 20px; flex-wrap: wrap; }
+                .footer-nav a { color: #aaa; font-size: 14px; transition: color 0.3s; }
+                .footer-nav a:hover { color: #f9c700; }
+                .footer-social { display: flex; gap: 12px; }
+                .footer-social a {
+                    width: 38px; height: 38px; border-radius: 50%;
+                    background: rgba(255,255,255,0.07); color: #aaa;
+                    display: flex; align-items: center; justify-content: center;
+                    font-size: 15px; border: 1px solid rgba(255,255,255,0.1);
+                    transition: all 0.3s;
+                }
+                .footer-social a:hover { background: #f9c700; color: #111; border-color: #f9c700; }
+                .footer-bottom { text-align: center; padding: 16px 0; }
+                .footer-bottom p { color: #555; font-size: 13px; margin: 0; }
+            </style>
 
             <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 
