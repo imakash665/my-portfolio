@@ -962,78 +962,41 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Function to handle project filtering
+            // Add "All" option to each dropdown first
+            document.querySelectorAll('.filter-dropdowns select').forEach(dropdown => {
+                const opt = document.createElement('option');
+                opt.text = 'All'; opt.value = 'all';
+                dropdown.add(opt, 0);
+                dropdown.selectedIndex = 0;
+            });
+
             function filterProjects() {
-                const selectedTool = document.getElementById('tool-filter').value;
-                const selectedTechnique = document.getElementById('technique-filter').value;
-                const selectedIndustry = document.getElementById('industry-filter').value;
+                const tool = document.getElementById('tool-filter').value;
+                const technique = document.getElementById('technique-filter').value;
+                const industry = document.getElementById('industry-filter').value;
 
-                const projects = document.querySelectorAll('.gallery-single');
-
-                projects.forEach(project => {
-                    const tool = selectedTool === 'all' || selectedTool === '' || project.classList.contains(selectedTool);
-                    const technique = selectedTechnique === 'all' || selectedTechnique === '' || project.classList.contains(selectedTechnique);
-                    const industry = selectedIndustry === 'all' || selectedIndustry === '' || project.classList.contains(selectedIndustry);
-
-                    if (tool && technique && industry) {
-                        project.style.display = 'block'; // Show the project
-                    } else {
-                        project.style.display = 'none'; // Hide the project
-                    }
+                document.querySelectorAll('.gallery-single').forEach(project => {
+                    const showTool = tool === 'all' || project.classList.contains(tool);
+                    const showTechnique = technique === 'all' || project.classList.contains(technique);
+                    const showIndustry = industry === 'all' || project.classList.contains(industry);
+                    project.style.display = (showTool && showTechnique && showIndustry) ? 'block' : 'none';
                 });
-
-                // Reorder the projects in the gallery
-                const galleryList = document.querySelector('.gallery-list');
-                galleryList.prepend(...projects);
             }
 
-            // Event listeners for filter dropdowns
             document.getElementById('tool-filter').addEventListener('change', filterProjects);
             document.getElementById('technique-filter').addEventListener('change', filterProjects);
             document.getElementById('industry-filter').addEventListener('change', filterProjects);
 
-            // Initial filter on page load
+            // Show all on load
             filterProjects();
 
-            // Get reference to the Show All button
-            const showAllBtn = document.getElementById('show-all-btn');
-
-            // Add event listener to the Show All button
-            showAllBtn.addEventListener('click', function () {
-                const projects = document.querySelectorAll('.gallery-single');
-
-                projects.forEach(project => {
-                    project.style.display = 'block'; // Show all projects
-                });
-
-                // Reset dropdowns to default option
+            document.getElementById('show-all-btn').addEventListener('click', function () {
+                document.querySelectorAll('.gallery-single').forEach(p => p.style.display = 'block');
                 document.getElementById('tool-filter').selectedIndex = 0;
                 document.getElementById('technique-filter').selectedIndex = 0;
                 document.getElementById('industry-filter').selectedIndex = 0;
-
-                // Reorder the projects in the gallery
-                const galleryList = document.querySelector('.gallery-list');
-                galleryList.prepend(...projects);
             });
         });
-
-        // Function to initialize the dropdowns with "All" option
-        function initializeDropdowns() {
-            const dropdowns = document.querySelectorAll('.filter-dropdowns select');
-
-            dropdowns.forEach(dropdown => {
-                const defaultOption = document.createElement('option');
-                defaultOption.text = 'All';
-                defaultOption.value = 'all'; // Set value to 'all'
-                dropdown.add(defaultOption, 0); // Add the option at the beginning
-
-                // Set dropdown to 'All' initially
-                dropdown.selectedIndex = 0;
-            });
-        }
-
-        // Initialize the dropdowns
-        initializeDropdowns();
     </script>
 
 
