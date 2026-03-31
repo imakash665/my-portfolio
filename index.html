@@ -246,14 +246,14 @@
                 <div class="col-md-3 col-6 py-4 wow fadeIn">
                     <div class="stat-card">
                         <i class="fas fa-project-diagram stat-card-icon"></i>
-                        <h1 class="number-count" data-number="3">10+</h1>
+                        <h1 class="number-count" data-number="10" data-suffix="+">10+</h1>
                         <span>Projects</span>
                     </div>
                 </div>
                 <div class="col-md-3 col-6 py-4 wow fadeIn">
                     <div class="stat-card">
                         <i class="fas fa-briefcase stat-card-icon"></i>
-                        <h1 class="number-count" data-number="3">4</h1>
+                        <h1 class="number-count" data-number="4">4</h1>
                         <span>Years of Experience</span>
                     </div>
                 </div>
@@ -288,14 +288,14 @@
                 <div class="col-md-3 col-6 py-4 wow fadeIn">
                     <div class="stat-card">
                         <i class="fas fa-code stat-card-icon"></i>
-                        <h1 class="number-count" data-number="4">6</h1>
+                        <h1 class="number-count" data-number="6">6</h1>
                         <span>Technologies Mastered</span>
                     </div>
                 </div>
                 <div class="col-md-3 col-6 py-4 wow fadeIn">
                     <div class="stat-card">
                         <i class="fas fa-graduation-cap stat-card-icon"></i>
-                        <h1 class="number-count" data-number="7">8</h1>
+                        <h1 class="number-count" data-number="8">8</h1>
                         <span>GPA</span>
                     </div>
                 </div>
@@ -351,8 +351,9 @@
                 var count = 0;
                 var interval = setInterval(function () {
                     count += step;
-                    if (count >= target) { counter.textContent = target; clearInterval(interval); }
-                    else { counter.textContent = count; }
+                    var suffix = counter.getAttribute('data-suffix') || '';
+                    if (count >= target) { counter.textContent = target + suffix; clearInterval(interval); }
+                    else { counter.textContent = count + suffix; }
                 }, 50);
             });
         });
